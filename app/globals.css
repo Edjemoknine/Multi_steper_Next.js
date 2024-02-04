@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.stepItem {
+  @apply relative flex flex-col justify-center items-center w-72 gap-5;
+}
+.stepItem:not(:first-child):before {
+  @apply content-[''] text-white bg-slate-200 absolute w-full h-[3px] right-2/4 top-1/3 -translate-y-2/4;
+}
+.active.stepItem:not(:first-child):before {
+  @apply bg-blue-500 duration-500 ease-in-out;
+}
+
+.active .step {
+  @apply bg-blue-500 duration-500 ease-in-out;
+}
+.completed.stepItem:not(:first-child):before,
+.active.stepItem:not(:first-child):before {
+  @apply bg-green-500 duration-500 ease-in-out;
+}
+.completed .step {
+  @apply bg-green-500 duration-500 ease-in-out;
+}
+
+p {
+  @apply text-gray-500 font-semibold;
+}
+.completed p {
+  @apply text-white;
+}
+
+body {
+  background-color: rgb(30, 0, 255);
+  overflow-x: hidden;
+}
+
+.shap1 {
+  animation: one 10s infinite;
+}
+.shap2 {
+  animation: two 10s infinite;
+}
+.shap3 {
+  animation: three 10s infinite;
+}
+
+@keyframes one {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    left: -100px;
+    top: 70px;
+  }
+  50% {
+    left: 20px;
+    top: 150px;
+  }
+  100% {
+    left: 50px;
+    top: 100px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+@keyframes two {
+  0% {
+    left: 0px;
+    top: 300px;
+  }
+  25% {
+    left: 50px;
+    top: 350px;
+  }
+  50% {
+    left: 100px;
+    top: 400px;
+  }
+  100% {
+    left: 50px;
+    top: 300px;
+  }
+  100% {
+    left: 0px;
+    top: 300px;
+  }
+}
+@keyframes three {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    left: -50px;
+    top: 50px;
+  }
+  50% {
+    left: 50px;
+    top: 70px;
+  }
+  100% {
+    left: 150px;
+    top: 150px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
